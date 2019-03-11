@@ -20,11 +20,11 @@ export class SearchJobsComponent implements OnInit {
   }
 
   Search(exp,loc){
-    debugger
+   
     console.log(exp,loc);
     this.JobsFeed_data= new JobFeed(exp,loc);
     this.jobservice.searchActivated.next(this.JobsFeed_data);
-    // this.route.navigate(['listjob'])
+   
   }
 
 }

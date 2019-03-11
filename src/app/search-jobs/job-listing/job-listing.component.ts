@@ -15,6 +15,7 @@ export class JobListingComponent implements OnInit {
   notmatchedarray:any=[];
   searchquary:boolean=false;
   skill_json: string;
+  KeywordSearcharray: any=[];
  
   constructor(private jobSearchService:JobSearchService,
               private httpClient: HttpClient) { }
@@ -71,7 +72,8 @@ export class JobListingComponent implements OnInit {
     )
   }
   searchUsingKeyword(value){
-    debugger
+    
+   
     this.searchedarray=[];
     
     this.JobsFeed_data.jobsfeed.forEach(element => {
