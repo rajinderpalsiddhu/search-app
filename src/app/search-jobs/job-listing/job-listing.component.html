@@ -1,0 +1,164 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <label >Jobs Listings</label>
+    </div>
+    <div class="col-md-12">
+      <div class="row">
+        <div class="col-md-4">
+        </div>
+        <div class="col-md-4">
+          <div class="row">
+            <div class="col-md-4 labelText"><label>Total Jobs:</label> {{searchedarray.length}}</div>
+          </div>
+        </div>
+        <div class="col-md-4 searchButton">
+          <button type="button" class="btn btn-default btn-sm sortbyloc" (click)="SortByLoc()">Sort by Location</button>
+          <button type="submit" class="btn btn-default btn-sm sortbyexp" (click)="SortByExp()">Sort by Exp</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-12">
+      <div class="row">
+        <div class="col-md-3 search">
+          <span class="fa fa-search"></span>
+          <input type="text" class="form-control keywordsearch" (keyup)="searchUsingKeyword($event.target.value)" placeholder="Keyword and Skills"/>
+        </div>
+        <div class="col-md-9">
+          <div class="row">
+            <div class="col-md-6 " *ngFor="let result of searchedarray;">
+              <div class="row">
+                <div class="col-md-12 searchcontentdiv">
+                  <div class="row">
+                      <div class="col-md-3">
+                          <label class="searchtext">title</label>
+                        </div>
+                        <div class="col-md-1">
+                          <label>:</label>
+                        </div>
+                        <div class="col-md-8">
+                         {{result.title}}
+                        </div>
+                  </div>
+                  <div class="row">
+                      <div class="col-md-3">
+                          <label class="searchtext">applylink</label>
+                        </div>
+                        <div class="col-md-1">
+                          <label>:</label>
+                        </div>
+                        <div class="col-md-8" data-toggle="tooltip" data-placement="right" title={{result.applylink}}>
+                         {{result.applylink | shorten }}
+                        </div>
+                  </div>
+                 
+                  <div class="row" >
+                      <div class="col-md-3">
+                          <label class="searchtext">companyname</label>
+                        </div>
+                        <div class="col-md-1">
+                          <label>:</label>
+                        </div>
+                        <div class="col-md-8">
+                         {{result.companyname}}
+                        </div>
+                  </div>
+                  <div class="row">
+                      <div class="col-md-3">
+                          <label class="searchtext">location</label>
+                        </div>
+                        <div class="col-md-1">
+                          <label>:</label>
+                        </div>
+                        <div class="col-md-8">
+                         {{result.location}}
+                        </div>
+                  </div>
+                  <div class="row">
+                      <div class="col-md-3">
+                          <label class="searchtext">experience</label>
+                        </div>
+                        <div class="col-md-1">
+                          <label>:</label>
+                        </div>
+                        <div class="col-md-8">
+                         {{result.experience}}
+                        </div>
+                  </div>
+                  <div class="row">
+                      <div class="col-md-3">
+                          <label class="searchtext">salary</label>
+                        </div>
+                        <div class="col-md-1">
+                          <label>:</label>
+                        </div>
+                        <div class="col-md-8">
+                         {{result.salary}}
+                        </div>
+                  </div>
+                  <div class="row">
+                      <div class="col-md-3">
+                          <label class="searchtext">type</label>
+                        </div>
+                        <div class="col-md-1">
+                          <label>:</label>
+                        </div>
+                        <div class="col-md-8">
+                         {{result.type}}
+                        </div>
+                  </div>
+                  <div class="row">
+                      <div class="col-md-3">
+                          <label class="searchtext">skills</label>
+                        </div>
+                        <div class="col-md-1">
+                          <label>:</label>
+                        </div>
+                        <div class="col-md-8" data-toggle="tooltip" data-placement="right" title={{result.skills}}>
+                         {{result.skills | shorten}}
+                        </div>
+                  </div>
+                  <div class="row" *ngIf="result.startdate !== ''">
+                      <div class="col-md-3">
+                          <label class="searchtext">startdate</label>
+                        </div>
+                        <div class="col-md-1">
+                          <label>:</label>
+                        </div>
+                        <div class="col-md-8">
+                         {{result.startdate}}
+                        </div>
+                  </div>
+                  <div class="row" *ngIf="result.enddate !== ''">
+                      <div class="col-md-3">
+                          <label class="searchtext">enddate</label>
+                        </div>
+                        <div class="col-md-1">
+                          <label>:</label>
+                        </div>
+                        <div class="col-md-8">
+                         {{result.enddate}}
+                        </div>
+                  </div>
+                 
+                  <div class="row" *ngIf="result.source !== ''">
+                      <div class="col-md-3">
+                          <label class="searchtext">source</label>
+                        </div>
+                        <div class="col-md-1">
+                          <label>:</label>
+                        </div>
+                        <div class="col-md-8">
+                         {{result.source}}
+                        </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
